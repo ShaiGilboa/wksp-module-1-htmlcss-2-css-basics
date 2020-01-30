@@ -31,7 +31,9 @@ Write the CSS to make the cat text blue.
 ```
 
 ```css
-/* css here */
+.feline {
+  color: blue;
+}/* css here */
 
 ```
 
@@ -48,7 +50,9 @@ Write the CSS to make the cat text blue.
 ```
 
 ```css
-/* css here */
+h2{
+    color: blue;
+}
 
 ```
 
@@ -64,10 +68,15 @@ Write the CSS to make the cat text blue.
 ```
 
 ```css
-/* css here */
-
+.royalcat{
+    color: blue;
+}
 ```
+you can use more then one in CSS:
 
+h1, .h1 {
+    for example
+}
 ---
 
 ### Exercise 4 [🐇](https://codepen.io)
@@ -81,6 +90,9 @@ Write the CSS to make the dogs text red.
 ```
 
 ```css
+.canine {
+    color: red;
+}
 /* css here */
 
 ```
@@ -98,6 +110,9 @@ Write the CSS to make the dogs text red.
 ```
 
 ```css
+h1 {
+    color: red;
+}
 /* css here */
 
 ```
@@ -117,7 +132,7 @@ What color is the `p` element?
 p {
     color: red
 }
-
+it will be blue because class has a higher priority (later in order of styling)
 ```
 
 ---
@@ -146,15 +161,18 @@ Every HTML element is a box that has 4 properties.
 | `margin-left`   |
 | `margin-right`  |
 | `margin-bottom` |
+| `margin-top`    |
 
 --- 
 
-- Shorthand is best
+- Shorthand is best - clock wise (starting at the top)
     - `margin: top | right | bottom | left`
     - `margin: 20px 10px 5px 0`
-    - `margin: 20px 10px`
-    - `margin: 20px`
+    - `margin: 20px 10px` - 20 top, 10 right, 20 buttom, 10 left.
+    - `margin: 20px 10px 30px` - 20 top, 10 right, 30 buttom, 10 left
+    - `margin: 20px` - 20 all
 
+it will aspire to be symetrical
 ---
 
 ### Example
@@ -176,7 +194,8 @@ What is the width and height of this box?
 ---
 
 We can fix this with the `box-sizing` CSS property.
-
+_this will include the border but not the margin_
+_the `hieght` and `width` refer to the `box-sizing`_
 ```css
 * {
     box-sizing: border-box;
@@ -185,6 +204,8 @@ We can fix this with the `box-sizing` CSS property.
 
 _What is the meaning of `*`?_
 
+_the box is the size of the border._
+_`*` - applies to everything_
 ---
 
 <img src='./assets/box_example.png' />
@@ -193,10 +214,10 @@ _What is the meaning of `*`?_
 
 ## The [Display](https://www.w3schools.com/cssref/pr_class_display.asp) property
 
-- block
-- inline-block
-- inline
-- none
+- block _takes the whole width_
+- inline-block _a combination of the two_
+- inline _follow each other, you can have many on the line_
+- none _dosen't display_
 - _there are many more_
 
 ---
@@ -210,7 +231,7 @@ _What is the meaning of `*`?_
 ### `display: inline`
 
 - Displays an element as an inline element.
-- Any height and width properties will have no effect.
+- Any height and width properties will have no effect. 
 
 ---
 
@@ -223,7 +244,7 @@ _What is the meaning of `*`?_
 ### `display: none`
 
 - The element is completely removed! 
-
+_none existent in the page at all!_
 ---
 
 ### Elements already have their own display behavior
@@ -281,7 +302,7 @@ _What is the meaning of `*`?_
 
 ### `position: fixed`
 
-- It is positioned relative to the viewport.
+- It is positioned relative to the viewport (the window) - when you scrool it stays in the same place on the screen.
 - It always stays in the same place even if the page is scrolled.
 - The top, right, bottom, and left properties are used to position the element.
 - It is pulled out of the flow of content.
@@ -290,7 +311,7 @@ _What is the meaning of `*`?_
 
 ### `position: absolute`
 
-- It is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).
+- It is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed). _`rewuires the parent to have a `position: relative_
 - If an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.
 
 Note: When using this property, you will need to set the parent's position as well, anything but `static`.
@@ -302,7 +323,7 @@ Note: When using this property, you will need to set the parent's position as we
 ```html
 <div class="container">
    <p>Hey!</p>
-   <p class="child">there!</div>
+   <p class="child">there!</p>
 </div>
 ```
 
@@ -328,6 +349,7 @@ Note: When using this property, you will need to set the parent's position as we
 
 - https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
 
+- a child cannot have a higher stack index then it's parent
 ---
 
 ## Flexbox
@@ -351,7 +373,7 @@ There are other properties you can give the parent container:
 
 | property          | notes |
 | ----------------- | ----- |
-| `flex-direction`  | default is `row`
+| `flex-direction`  | default is `row`, there is also `column`
 | `flex-wrap`       | default is `nowrap`
 | `justify-content` | main axis
 | `align-items`     | secondary axis
@@ -368,7 +390,7 @@ The most common recipe for a container is
     align-items: center;
 }
 ```
-
+_what's in the center are the children `not the parent`_
 ---
 
 ### Children can have `flex` properties too!

@@ -12,13 +12,14 @@ _*actually it's Cascading Style Sheets_
 
 - We use CSS to change the look of our content.
 - CSS is used to change page layout, colors, fonts, text-sizes, image size, etc…
+it can also be used to add images,
 - You can do almost anything _presentational_ with CSS.
-- You are limited only by your knowledge of CSS.
+- You are limited only by your knowledge of CSS. (and your grit)
 
 ---
 
 ## Link CSS to an HTML page
-
+you dont want to write CSS in HTML, so yu need to link it.
 ```html
 <head>
     <link href="main.css" rel="stylesheet">
@@ -32,6 +33,8 @@ The `<link>` tag is used to import the CSS file containing rules applying the st
 ## CSS Selectors
 
 CSS Selectors are used to specify on which elements to apply styling. 
+never use id (unless you really have to), they are unique (just one per page)
+id's are used for JS
 
 | Type  | Example     | Note  |
 | ----- | ----------- | ----- |
@@ -42,7 +45,7 @@ CSS Selectors are used to specify on which elements to apply styling.
 ---
 
 ### Example (using tags):
-
+all lower case in HTML and CSS, no spaces (a space creates an extra class)
 `<h1>My Amazing Blog</h1>`
 
 ```css

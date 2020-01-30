@@ -12,29 +12,42 @@ html, body, div, h1, h2, p, ul, li {
 /* ADD CSS BELOW */
 
 body {
-
+	position: relative;
+    height: 400px;
+	border: 0px solid;
+	font-family: 'Bangers', cursive;
 }
 
 h1, h2 {
-    
+	text-align: center;
+	padding: 3%;
 }
 
 h1 {
-
+	font-size: xx-large;
 }
 
 h2 {
-
+	font-size: medium;
+	padding-bottom: 10px;
 }
 
 .row {
-
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	list-style-type: none;
 }
 
 .col {
-
+	border: dashed black 1px;
+	padding: 10px;
+	background-color: #eaeaee;
+	margin: 10px;
 }
 
 .image {
-
+	max-width: 220px;
+	max-height: 120px;
 }
